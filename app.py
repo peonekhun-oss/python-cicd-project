@@ -3,7 +3,7 @@ import sqlite3
 from flask import Flask, Response, render_template_string
 from datetime import datetime
 
-app = Flask(name)
+app = Flask(__name__)
 
 def init_db():
     conn = sqlite3.connect('logs.db')
@@ -65,5 +65,5 @@ def index():
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-if name == "main":
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

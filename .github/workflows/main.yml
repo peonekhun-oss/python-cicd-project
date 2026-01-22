@@ -15,6 +15,8 @@ jobs:
         python-version: '3.9'
     - name: Install dependencies
       run: |
-        pip install flask opencv-python-headless
+        pip install flask         
+        opencv-python-headless
     - name: Run Syntax Check
-      run: python -m py_compile app.py
+      run: python -m py_compile         
+       app.py
